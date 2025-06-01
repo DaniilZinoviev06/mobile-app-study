@@ -12,7 +12,7 @@
         <item name="colorSurface">@color/white</item>
 
         <item name="toolbarStyle">@style/MyToolbarStyle</item>
-        
+
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:navigationBarColor">@color/black</item>
     </style>

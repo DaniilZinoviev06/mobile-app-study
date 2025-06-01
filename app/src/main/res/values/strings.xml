@@ -3,4 +3,6 @@
     <string name="title_home">Домашняя</string>
     <string name="title_service">Услуги</string>
     <string name="title_profile">Профиль</string>
+    <string name="title_login">Вход</string>
+    <string name="title_register">Регистрация</string>
 </resources>

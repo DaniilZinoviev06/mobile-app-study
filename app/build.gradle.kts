@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("kotlin-parcelize")
     id("kotlin-kapt")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -46,6 +47,10 @@ android {
 dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
