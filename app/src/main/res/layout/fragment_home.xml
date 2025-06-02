@@ -4,68 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_gray"
+    android:background="#F4F4F4"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="8dp">
 
-        <TextView
-            android:id="@+id/headerTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary"
-            android:layout_marginBottom="24dp"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_header_rounded"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
 
-        <TextView
-            android:id="@+id/promotionTitle"
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:shadowColor="#80000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="8dp"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_block_rounded"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
 
-        <TextView
-            android:id="@+id/promotionText"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/promotionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#fbaf3f"
+                    android:layout_centerInParent="true"
+                    tools:text="Текущие проекты"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/promotionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"
+                tools:text="Мы реализуем масштабные проекты"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/projectsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:clipToPadding="false"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                tools:listitem="@layout/item_project"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/text_secondary"
-            android:layout_marginBottom="24dp"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_block_rounded"
+            android:padding="16dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/projectsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:layout_marginBottom="24dp"
-            android:clipToPadding="false"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            tools:listitem="@layout/item_project"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/our_services"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:layout_marginBottom="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/our_services"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#fbaf3f"/>
+            </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/servicesRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:clipToPadding="false"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            tools:listitem="@layout/item_service"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/servicesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                tools:listitem="@layout/item_service"/>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
