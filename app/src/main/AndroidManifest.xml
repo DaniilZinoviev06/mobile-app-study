@@ -25,6 +25,10 @@
             android:name="firebase_auth_emulator_host"
             android:value="10.0.2.2:9099" />
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

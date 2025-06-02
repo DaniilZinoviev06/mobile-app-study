@@ -5,4 +5,9 @@
     <string name="title_profile">Профиль</string>
     <string name="title_login">Вход</string>
     <string name="title_register">Регистрация</string>
+    <string name="company_name">Строительная компания "Lenstroyremont"</string>
+    <string name="current_projects">Наши текущие проекты</string>
+    <string name="company_description">Реализуем сложные строительные проекты с 1992 года. Гарантия качества и соблюдение сроков.</string>
+    <string name="our_services">Наши услуги</string>
+    <string name="project_image_desc">Изображение строительного проекта</string>
 </resources>

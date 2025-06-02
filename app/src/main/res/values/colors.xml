@@ -11,4 +11,9 @@
     <color name="white_20pct">#33FFFFFF</color>
     <color name="dark_white">#F4F4F4</color>
     <color name="orange">#f69400</color>
+    <color name="primary">#1E88E5</color>
+    <color name="primary_dark">#1565C0</color>
+    <color name="background_gray">#FAFAFA</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
 </resources>
