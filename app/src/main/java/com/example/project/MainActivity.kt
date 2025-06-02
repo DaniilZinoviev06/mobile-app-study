@@ -2,6 +2,8 @@ package com.example.project
 
 import android.os.Bundle
 import android.content.Intent
+import android.util.Log
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -22,8 +24,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Firebase Auth
         auth = Firebase.auth
+
+        //auth.signOut()
 
         if (auth.currentUser == null) {
             startLoginActivity()
@@ -31,6 +34,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         setupNavigation()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("AuthDebug", "Current user: ${auth.currentUser?.uid ?: "NULL"}")
     }
 
     private fun setupNavigation() {
