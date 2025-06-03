@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.project.R
 import com.example.project.Service
 import com.example.project.ServiceAdapter
@@ -54,7 +55,7 @@ class ServiceFragment : Fragment() {
         )
 
         binding.servicesRecyclerView.apply {
-            layoutManager = GridLayoutManager(context, 2)
+            layoutManager = LinearLayoutManager(requireContext())
             adapter = serviceAdapter
             setHasFixedSize(true)
         }
@@ -88,7 +89,6 @@ class ServiceFragment : Fragment() {
     }
 
     private fun showServiceDetails(service: Service) {
-        // Implement service details navigation
     }
 
     private fun addToCart(service: Service) {

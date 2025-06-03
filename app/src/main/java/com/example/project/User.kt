@@ -9,5 +9,7 @@ data class User(
     @PrimaryKey val uid: String,
     val email: String,
     @ColumnInfo(defaultValue = "CURRENT_TIMESTAMP")
-    val lastUpdated: Long = System.currentTimeMillis()
+    val lastUpdated: Long = System.currentTimeMillis(),
+    @Transient var displayName: String? = null,
+    @Transient var photoUrl: String? = null
 )

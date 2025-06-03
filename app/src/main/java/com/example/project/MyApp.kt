@@ -2,6 +2,10 @@ package com.example.project
 
 import android.app.Application
 import androidx.room.Room
+import com.bumptech.glide.GlideBuilder
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.google.firebase.firestore.ktx.firestore
@@ -34,6 +38,12 @@ class MyApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        Glide.init(this, GlideBuilder()
+            .setDefaultRequestOptions(
+                RequestOptions()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+            )
+        )
         Firebase.firestore
     }
 }

@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.project.databinding.ItemServiceListBinding
 
 class ServiceAdapter(
@@ -19,6 +21,8 @@ class ServiceAdapter(
 
         fun bind(service: Service) {
             with(binding) {
+                serviceImage.setImageDrawable(null)
+
                 serviceTitle.text = service.title
                 servicePrice.text = "%.2f ₽".format(service.price)
                 serviceDuration.text = service.durationDays?.let { "$it дней" } ?: ""
@@ -28,6 +32,9 @@ class ServiceAdapter(
                     .load(service.imageUrl)
                     .placeholder(R.drawable.ic_construction)
                     .error(R.drawable.ic_construction)
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .into(serviceImage)
 
                 root.setOnClickListener { onItemClick(service) }

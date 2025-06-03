@@ -31,16 +31,16 @@ class ServiceRepository @Inject constructor(
                     id = "2",
                     title = "Строительство коттеджа",
                     description = "Под ключ: фундамент, коробка, кровля, коммуникации",
-                    price = 35000.0,
-                    imageUrl = "https://example.com/build.jpg",
+                    price = 35000000.0,
+                    imageUrl = "https://goodstone.ru/images/v3/stroikey/bgv2m.png",
                     area = 150.0
                 ),
                 Service(
                     id = "3",
                     title = "Ремонт квартиры",
                     description = "Комплексный ремонт с материалами: демонтаж, черновая и чистовая отделка",
-                    price = 12000.0,
-                    imageUrl = "https://example.com/repair.jpg",
+                    price = 120000.0,
+                    imageUrl = "https://evdom.ru/wp-content/uploads/2018/08/1-8-1000x563.jpg",
                     area = 80.0
                 ),
                 Service(
@@ -48,7 +48,7 @@ class ServiceRepository @Inject constructor(
                     title = "Электромонтажные работы",
                     description = "Полная разводка электрики по квартире/дому",
                     price = 2500.0,
-                    imageUrl = "https://example.com/electric.jpg",
+                    imageUrl = "https://myremont.ru/assets/from_origin/upload/resize_cache/iblock/c79/600_450_2/c79529ac5a34b715f6c129b9525788a4.jpg",
                     area = 100.0
                 ),
                 Service(
@@ -56,7 +56,7 @@ class ServiceRepository @Inject constructor(
                     title = "Сантехнические работы",
                     description = "Разводка труб, установка сантехники, подключение бытовых приборов",
                     price = 1800.0,
-                    imageUrl = "https://example.com/plumbing.jpg",
+                    imageUrl = "https://www.007spb.ru/images/santeh4.jpg",
                     area = 120.0
                 ),
                 Service(
@@ -64,23 +64,23 @@ class ServiceRepository @Inject constructor(
                     title = "Дизайн-проект интерьера",
                     description = "3D-визуализация, подбор материалов, авторский надзор",
                     price = 30000.0,
-                    imageUrl = "https://example.com/interior.jpg",
+                    imageUrl = "https://remplanner.ru/images/studio/layout/planning.jpg",
                     durationDays = 21
                 ),
                 Service(
                     id = "7",
                     title = "Устройство фундамента",
                     description = "Ленточный фундамент с гидроизоляцией",
-                    price = 8000.0,
-                    imageUrl = "https://example.com/foundation.jpg",
+                    price = 800000.0,
+                    imageUrl = "https://drev-brus.ru/wp-content/uploads/1-41.jpg",
                     area = 200.0
                 ),
                 Service(
                     id = "8",
                     title = "Монтаж кровли",
-                    description = "Устройство кровли из металлочерепицы с утеплением",
-                    price = 2500.0,
-                    imageUrl = "https://example.com/roof.jpg",
+                    description = "Устройство кровли с утеплением",
+                    price = 25000.0,
+                    imageUrl = "https://www.pkksib.ru/assets/images/webp/5e856a48dae75.webp",
                     area = 180.0
                 )
             )
