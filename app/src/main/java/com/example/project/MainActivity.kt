@@ -42,8 +42,6 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         Log.d("AuthDebug", "Current user: ${auth.currentUser?.uid ?: "NULL"}")
         val myApp = application as MyApp
-        Log.d("FirestoreTest", "Firestore instance: ${myApp.firestore.app.name}")
-        Log.d("RoomTest", "Database created: ${myApp.database.isOpen}")
     }
 
     private fun setupNavigation() {

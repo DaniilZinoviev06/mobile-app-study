@@ -2,8 +2,10 @@ package com.example.project.ui.service
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.project.AppDatabase
 import com.example.project.Service
 import com.example.project.ServiceRepository
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -14,7 +16,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ServiceViewModel @Inject constructor(
-    private val repository: ServiceRepository
+    private val repository: ServiceRepository,
+    private val auth: FirebaseAuth,
+    private val db: AppDatabase
 ) : ViewModel() {
 
     init {
@@ -49,11 +53,23 @@ class ServiceViewModel @Inject constructor(
 
     fun addToCart(serviceId: String) {
         viewModelScope.launch {
+            try {
+                val userId = auth.currentUser?.uid ?: return@launch
+                repository.addUserService(userId, serviceId)
+            } catch (e: Exception) {
+                _errorMessage.value = "Ошибка добавления услуги: ${e.localizedMessage}"
+            }
         }
     }
 
     fun removeFromCart(serviceId: String) {
         viewModelScope.launch {
+            try {
+                val userId = auth.currentUser?.uid ?: return@launch
+                db.userServiceCrossRefDao().deleteByUserAndService(userId, serviceId)
+            } catch (e: Exception) {
+                _errorMessage.value = "Ошибка удаления услуги: ${e.localizedMessage}"
+            }
         }
     }
 

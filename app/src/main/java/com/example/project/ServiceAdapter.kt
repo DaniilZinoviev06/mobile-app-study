@@ -12,7 +12,8 @@ import com.example.project.databinding.ItemServiceListBinding
 
 class ServiceAdapter(
     private val onItemClick: (Service) -> Unit,
-    private val onAddToCart: (Service) -> Unit
+    private val onAddToCart: (Service) -> Unit,
+    private val showRemoveButton: Boolean = false
 ) : ListAdapter<Service, ServiceAdapter.ServiceViewHolder>(ServiceDiffCallback()) {
 
     inner class ServiceViewHolder(
@@ -27,6 +28,8 @@ class ServiceAdapter(
                 servicePrice.text = "%.2f ₽".format(service.price)
                 serviceDuration.text = service.durationDays?.let { "$it дней" } ?: ""
                 serviceArea.text = service.area?.let { "${it} м²" } ?: ""
+
+                addToCartButton.text = if (showRemoveButton) "Убрать из корзины" else "Добавить в корзину"
 
                 Glide.with(root.context)
                     .load(service.imageUrl)

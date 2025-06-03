@@ -12,4 +12,12 @@
     <string name="project_image_desc">Изображение строительного проекта</string>
     <string name="service_image">Изображение услуги</string>
     <string name="add_to_cart">Добавить в заказ</string>
+    <string name="enter_your_name">Ваше имя</string>
+    <string name="save">Сохранить</string>
+    <string name="change_photo">Изменить фото</string>
+    <string name="your_services">Ваш заказ</string>
+    <string name="no_services_added">У Вас не было заказов</string>
+    <string name="profile_image">Изображение профиля</string>
+    <string name="remove_from_cart">Убрать из корзины</string>
+    <string name="price_format">%d ₽</string>
 </resources>

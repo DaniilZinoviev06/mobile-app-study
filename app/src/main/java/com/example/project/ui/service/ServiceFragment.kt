@@ -51,7 +51,8 @@ class ServiceFragment : Fragment() {
             },
             onAddToCart = { service ->
                 addToCart(service)
-            }
+            },
+            showRemoveButton = false
         )
 
         binding.servicesRecyclerView.apply {
@@ -89,6 +90,7 @@ class ServiceFragment : Fragment() {
     }
 
     private fun showServiceDetails(service: Service) {
+
     }
 
     private fun addToCart(service: Service) {
