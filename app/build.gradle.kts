@@ -5,6 +5,7 @@ plugins {
     id("kotlin-parcelize")
     id("kotlin-kapt")
     alias(libs.plugins.google.gms.google.services)
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -19,6 +20,17 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packaging {
+        resources {
+            excludes += "META-INF/androidx.*"
+            excludes += "META-INF/com.google.firebase*"
+        }
+    }
+
+    compileOptions {
+        isCoreLibraryDesugaringEnabled = true
     }
 
     buildTypes {
@@ -47,23 +59,31 @@ android {
 dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
-    implementation(libs.firebase.auth)
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
     implementation(libs.play.services.maps)
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.glide)
+    kapt(libs.glide.compiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
 
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.auth)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.auth.ktx)
 
     implementation(libs.play.services.auth)
     implementation(libs.play.services.safetynet)
 
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
+    coreLibraryDesugaring(libs.android.desugarJdkLibs)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

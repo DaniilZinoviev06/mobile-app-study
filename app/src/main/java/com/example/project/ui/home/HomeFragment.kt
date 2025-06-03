@@ -20,6 +20,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: HomeViewModel by viewModels()
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,7 +39,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerViews() {
-        // Настройка RecyclerView для проектов
         binding.projectsRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = ProjectsAdapter()

@@ -14,7 +14,9 @@ import com.example.project.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
@@ -39,6 +41,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.d("AuthDebug", "Current user: ${auth.currentUser?.uid ?: "NULL"}")
+        val myApp = application as MyApp
+        Log.d("FirestoreTest", "Firestore instance: ${myApp.firestore.app.name}")
+        Log.d("RoomTest", "Database created: ${myApp.database.isOpen}")
     }
 
     private fun setupNavigation() {

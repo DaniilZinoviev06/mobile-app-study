@@ -10,4 +10,6 @@
     <string name="company_description">Реализуем сложные проекты с 1992 года. Гарантия качества и соблюдение сроков.</string>
     <string name="our_services">Наши услуги</string>
     <string name="project_image_desc">Изображение строительного проекта</string>
+    <string name="service_image">Изображение услуги</string>
+    <string name="add_to_cart">Добавить в заказ</string>
 </resources>
